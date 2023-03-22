@@ -108,3 +108,25 @@
       </label><br />
 
       <input type="submit" value="Submit" />
+      <script type="text/javascript">
+        document.getElementById("quiz-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            checkAnswers();
+        });
+
+        function checkAnswers() {
+            const q1 = document.querySelector('input[name="q1"]:checked').value;
+            const q2 = document.querySelector('input[name="q2"]:checked').value;
+            const q3 = document.querySelector('input[name="q3"]:checked').value;
+
+            let correctAnswers = 0;
+
+            if (q1 === "d") correctAnswers++;
+            if (q2 === "b") correctAnswers++;
+            if (q3 === "a") correctAnswers++;
+
+            alert(`You got ${correctAnswers} out of 3 correct.`);
+        }
+      </script>
+  </body>
+</html>
